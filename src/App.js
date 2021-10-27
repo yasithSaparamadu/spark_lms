@@ -1,21 +1,12 @@
-import styled from "styled-components";
-
-const Tilte = styled.h1`
-  font-sizes: 3em;
-  text-align: center;
-  color: palevioletred;
-`;
-
-const Wrapper = styled.section`
-  padding: 6em;
-  background: yellow;
-`;
+import {Header, Main, Footer} from "./components/Layout"
 
 function App() {
   return (
-    <Wrapper>
-      <Tilte>It's gonna be awsome!</Tilte>
-    </Wrapper>
+    <>
+    <Header>This is the header</Header>
+    <Main>This is the main components</Main>
+    <Footer>This is the footer</Footer>
+    </>
   );
 }
 
