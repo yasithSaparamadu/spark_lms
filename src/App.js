@@ -1,11 +1,21 @@
-import {Header, Main, Footer} from "./components/Layout"
+import { Header, Main, Footer } from "./components/Layout";
+import { NavBar, NavItem, NavLink } from "./components/Navbar";
 
 function App() {
   return (
     <>
-    <Header>This is the header</Header>
-    <Main>This is the main components</Main>
-    <Footer>This is the footer</Footer>
+      <Header>
+        <NavBar>
+          <NavItem href="#">
+            <NavLink>Catalog</NavLink>
+          </NavItem>
+          <NavItem href="#">
+            <NavLink>Dashboard</NavLink>
+          </NavItem>
+        </NavBar>
+      </Header>
+      <Main>This is the main components</Main>
+      <Footer>This is the footer</Footer>
     </>
   );
 }
