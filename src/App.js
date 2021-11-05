@@ -1,6 +1,7 @@
-import { Header, Main, Footer } from "./components/Layout";
+import { Main, Footer } from "./components/Layout";
 import { NavBar, NavItem, NavLink } from "./components/Navbar";
 import { ThemeProvider } from "styled-components";
+import { BsBookHalf } from "react-icons/bs";
 
 function App() {
   const theme = {
@@ -8,25 +9,28 @@ function App() {
       main: "#29b6f6",
       light: "#73e8ff",
       dark: "#0086c3",
-      textColor: "#000"
-
+      textColor: "#000",
     },
     secondary: {
       main: "#fff",
-    }
+    },
   };
   return (
     <ThemeProvider theme={theme}>
-      <Header>
-        <NavBar>
-          <NavItem href="#">
-            <NavLink>Catalog</NavLink>
-          </NavItem>
-          <NavItem href="#">
-            <NavLink>Dashboard</NavLink>
-          </NavItem>
-        </NavBar>
-      </Header>
+      <NavBar>
+        <NavItem href="#">
+          <NavLink>
+            <BsBookHalf />
+          </NavLink>
+        </NavItem>
+        <NavItem href="#">
+          <NavLink>Catalog</NavLink>
+        </NavItem>
+        <NavItem href="#">
+          <NavLink>Dashboard</NavLink>
+        </NavItem>
+      </NavBar>
+
       <Main>This is the main components</Main>
       <Footer>This is the footer</Footer>
     </ThemeProvider>
