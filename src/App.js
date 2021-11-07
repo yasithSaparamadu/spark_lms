@@ -1,21 +1,49 @@
-import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { BsBookHalf } from "react-icons/bs";
 
-const Tilte = styled.h1`
-  font-sizes: 3em;
-  text-align: center;
-  color: palevioletred;
-`;
+import { Main, Footer, Header } from "./components/Layout";
+import { NavBar, NavItem, NavLink } from "./components/Navbar";
 
-const Wrapper = styled.section`
-  padding: 6em;
-  background: yellow;
-`;
+import Dashboard from "./containers/Dashboard";
 
 function App() {
+  const theme = {
+    primary: {
+      main: "#29b6f6",
+      light: "#73e8ff",
+      dark: "#0086c3",
+      textColor: "#000",
+    },
+    secondary: {
+      main: "#fff",
+    },
+    spacing: (factor) => `${factor * 8}px`,
+  };
+
   return (
-    <Wrapper>
-      <Tilte>It's gonna be awsome!</Tilte>
-    </Wrapper>
+    <ThemeProvider theme={theme}>
+      <Header>
+        <NavBar>
+          <NavItem href="#">
+            <NavLink>
+              <BsBookHalf />
+            </NavLink>
+          </NavItem>
+          <NavItem href="#">
+            <NavLink>Catalog</NavLink>
+          </NavItem>
+          <NavItem href="#">
+            <NavLink>Dashboard</NavLink>
+          </NavItem>
+        </NavBar>
+      </Header>
+      <Main>
+        <Dashboard />
+      </Main>
+      <Footer>
+        Copyrights {new Date().getFullYear()} © Yasith Saparamadu{""}
+      </Footer>
+    </ThemeProvider>
   );
 }
 
