@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import { BsBookHalf } from "react-icons/bs";
 
-import { Main, Footer } from "./components/Layout";
+import { Main, Footer, Header } from "./components/Layout";
 import { NavBar, NavItem, NavLink } from "./components/Navbar";
 
 import Dashboard from "./containers/Dashboard";
@@ -17,27 +17,32 @@ function App() {
     secondary: {
       main: "#fff",
     },
+    spacing: (factor) => `${factor * 8}px`,
   };
+
   return (
     <ThemeProvider theme={theme}>
-      <NavBar>
-        <NavItem href="#">
-          <NavLink>
-            <BsBookHalf />
-          </NavLink>
-        </NavItem>
-        <NavItem href="#">
-          <NavLink>Catalog</NavLink>
-        </NavItem>
-        <NavItem href="#">
-          <NavLink>Dashboard</NavLink>
-        </NavItem>
-      </NavBar>
+      <Header>
+        <NavBar>
+          <NavItem href="#">
+            <NavLink>
+              <BsBookHalf />
+            </NavLink>
+          </NavItem>
+          <NavItem href="#">
+            <NavLink>Catalog</NavLink>
+          </NavItem>
+          <NavItem href="#">
+            <NavLink>Dashboard</NavLink>
+          </NavItem>
+        </NavBar>
+      </Header>
       <Main>
-        This is the main components
         <Dashboard />
       </Main>
-      <Footer>This is the footer</Footer>
+      <Footer>
+        Copyrights {new Date().getFullYear()} © Yasith Saparamadu{""}
+      </Footer>
     </ThemeProvider>
   );
 }
