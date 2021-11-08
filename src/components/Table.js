@@ -15,7 +15,7 @@ const StyledTable = styled.table`
       background-color: #efefef;
     }
     :hover {
-      background-color: #lightpink;
+      background-color: lightpink;
     }
   }
   thead > tr {

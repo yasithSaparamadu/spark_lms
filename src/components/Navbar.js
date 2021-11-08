@@ -25,7 +25,7 @@ export const NavLink = styled.a`
   font-size: 1.25em;
 
   :hover {
-    background-color: #${(props) => props.theme.primary.light};
+    background-color: ${(props) => props.theme.primary.light};
   }
 
   .active {

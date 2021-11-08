@@ -32,7 +32,7 @@ export const Tab = styled.button`
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
   :hover {
-    background-color: ${(props) => props.theme.primary.ligt};
+    background-color: ${(props) => props.theme.primary.light};
   }
 `;
 
