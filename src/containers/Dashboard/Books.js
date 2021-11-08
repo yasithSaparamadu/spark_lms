@@ -15,9 +15,17 @@ const Books = ({ catalog }) => {
       title: "React Development 2021",
     },
   ];
+
+  const handleRowClick = (id) => {
+    console.log(id);
+  };
   return (
     <FluidContainer>
-      <Table data={updatedCatalog} />
+      <Table
+        data={updatedCatalog}
+        handleRowClick={handleRowClick}
+        instruction="Click row to view book"
+      />
     </FluidContainer>
   );
 };
