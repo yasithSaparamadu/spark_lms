@@ -1,32 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Table from "../../components/Table";
 import { FluidContainer } from "../../components/CommonComponents";
 
-const Books = ({ catalog }) => {
-  const updatedCatalog = [
-    ...catalog,
-    {
-      author: "Yasih Saparamadu",
-      burrowedDate: "",
-      burrowedMemberId: "",
-      id: "3",
-      isAvailable: true,
-      title: "React Development 2021",
-    },
-  ];
+import Book from "./Book";
 
-  const handleRowClick = (id) => {
+const Books = ({ catalog }) => {
+  const [selectedBookId, setSelectedBookId] = useState(null);
+
+  const handleTableRowClick = (id) => {
     console.log(id);
+    setSelectedBookId(id);
   };
-  return (
+
+  const handleBookViewBackClick = () => {
+    setSelectedBookId(null);
+  };
+
+  return selectedBookId === null ? (
     <FluidContainer>
       <Table
-        data={updatedCatalog}
-        handleRowClick={handleRowClick}
+        data={catalog}
+        handleRowClick={handleTableRowClick}
         instruction="Click row to view book"
       />
     </FluidContainer>
+  ) : (
+    <Book id={selectedBookId} handleBackClick={handleBookViewBackClick} />
   );
 };
 
